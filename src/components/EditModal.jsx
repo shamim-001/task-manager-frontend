@@ -17,11 +17,7 @@ const EditModal = ({ id, fetchData }) => {
       }
     };
     fetchData();
-    console.log("rendered");
   }, [id]);
-
-  console.log(name);
-  console.log(completed);
 
   const handleEdit = async () => {
     try {
