@@ -5,10 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     proxy: {
-      "/api": {
-        target: "https://task-manager-backend-bay.vercel.app",
-        changeOrigin: true,
-      },
+      "/api": "https://task-manager-backend-bay.vercel.app",
     },
   },
   plugins: [react()],
