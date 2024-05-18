@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import { baseURL } from "../constants/constants";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -10,7 +10,7 @@ const EditModal = ({ id, fetchData }) => {
   useEffect(() => {
     const fetchData = async () => {
       if (id) {
-        const response = await axios.get(`/api/v1/tasks/${id}`);
+        const response = await axios.get(`${baseURL}/api/v1/tasks/${id}`);
         const data = await response.data;
         setName(data.task.name);
         setCompleted(data.task.completed);

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 import EditModal from "./components/EditModal";
+import { baseURL } from "./constants/constants";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -14,7 +15,7 @@ const App = () => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get("/api/v1/tasks");
+      const response = await axios.get(`${baseURL}/api/v1/tasks`);
       const data = await response.data;
       const sortedTask = data.tasks.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
@@ -34,7 +35,7 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/v1/tasks", { name });
+      await axios.post(`${baseURL}/api/v1/tasks`, { name });
     } catch (error) {
       console.log(error);
     } finally {
@@ -45,7 +46,7 @@ const App = () => {
 
   const handleDeleteTask = async (id) => {
     try {
-      await axios.delete(`/api/v1/tasks/${id}`);
+      await axios.delete(`${baseURL}/api/v1/tasks/${id}`);
     } catch (error) {
       console.log(error);
     } finally {
