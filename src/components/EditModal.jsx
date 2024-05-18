@@ -21,7 +21,7 @@ const EditModal = ({ id, fetchData }) => {
 
   const handleEdit = async () => {
     try {
-      await axios.patch(`/api/v1/tasks/${id}`, { name, completed });
+      await axios.patch(`${baseURL}/api/v1/tasks/${id}`, { name, completed });
     } catch (error) {
       console.log(error);
     } finally {
