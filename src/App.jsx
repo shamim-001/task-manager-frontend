@@ -74,7 +74,11 @@ const App = () => {
         </form>
       </div>
 
-      {error && <p className="p-5">Something went wrong!</p>}
+      {error && (
+        <p className="p-5">
+          Something went wrong! Please refresh the page again!
+        </p>
+      )}
 
       {isLoading && <p className="p-5">Loading...</p>}
 
