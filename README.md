@@ -17,9 +17,11 @@ You can view the live demo of the Task Manager App [here](https://task-manager-f
 ## Screenshots
 
 ![Desktop View](/public/task-manager-desktop.png)
+
 _Desktop view of the task manager app._
 
 ![Mobile View](/public/task-manager-mobile.png)
+
 _Mobile view of the task manager app._
 
 ## Technologies Used
